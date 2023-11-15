@@ -1,7 +1,12 @@
 import { Octokit } from '@octokit/rest';
 
+let octokit: Octokit;
+
 export const getOctokit = () => {
-  return new Octokit({
-    auth: import.meta.env.VITE_GITHUB_TOKEN,
-  });
+  if (!octokit) {
+    octokit = new Octokit({
+      auth: import.meta.env.VITE_GITHUB_TOKEN,
+    });
+  }
+  return octokit;
 };
