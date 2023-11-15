@@ -13,7 +13,6 @@ export const useOctokitTeamRepos = (): Repo[] => {
             team_slug: import.meta.env.VITE_GITHUB_TEAM,
           })
         .then(({ data }) => {
-          console.log(data);
           const repoData = data.map(repo => ({ name: repo?.name }))
           setRepos(repoData)
         })
