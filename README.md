@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
+# Reporiffic!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This simple React app will display all the repos you are currently working on in one place, allowing you to easily access all open PRs.
 
-Currently, two official plugins are available:
+## Getting up and running
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+If you want to use Reporiffic to manage your repos, you'll need to do the following:
 
-## Expanding the ESLint configuration
+1. Clone this code to your local computer
+1. Run `npm i` in the main directory
+1. Create a `.env` file (see below)
+1. Run `npm run dev`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Creating a .env file
 
-- Configure the top-level `parserOptions` property like this:
+This app is currently still a POC and therefore runs on your local machine via a `.env` file rather than anything super fancy.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+Your `.env` file will need to contain the following:
+
+```
+VITE_GITHUB_TOKEN=<your personal github token>
+VITE_GITHUB_OWNER=<your Github organisation>
+VITE_GITHUB_TEAM=<your team slug>
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+For Economist Group teams, the Github organisation should be `EconomistDigitalSolutions`. 
+
+## Getting your team slug
+
+You can find your team slug as follows:
+
+1. Go to https://github.com/orgs/EconomistDigitalSolutions/teams
+1. Search for your team in the _Find a team..._ box
+1. Click on your team's name
+1. Copy everything after the https://github.com/orgs/EconomistDigitalSolutions/teams/ in the URL - this is your team slug
+
+## Generating a Github token
+
+This is a bit more involved, but once it's done, you shouldn't need to do it again for a while.
