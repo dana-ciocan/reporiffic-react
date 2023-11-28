@@ -17,7 +17,16 @@ export const App = () => {
     <>
       <UserWelcome name={name} team={team.name} />
       <p>These are the repos {team.name} manages:</p>
-      {repos.map(repo => <Repo name={repo.name} />)}
+      <table>
+        <thead>
+        <tr>
+          <th>Repo name</th><th>Number of open PRs</th>
+        </tr>
+        </thead>
+        <tbody>
+          {repos.map(repo => <Repo name={repo.name} />)}
+        </tbody>
+      </table>
     </>
   )
 }

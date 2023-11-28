@@ -3,5 +3,5 @@ export interface RepoProps {
 }
 
 export const Repo = ({ name }: RepoProps): JSX.Element => {
-  return <div key={name}>{name}</div>;
+  return <tr key={name}><td>{name}</td><td>Open PRs here</td></tr>;
 };
