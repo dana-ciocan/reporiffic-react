@@ -24,7 +24,7 @@ export const App = () => {
         </tr>
         </thead>
         <tbody>
-          {repos.map(repo => <Repo name={repo.name} />)}
+          {repos.map(repo => <Repo key={repo.name} name={repo.name} />)}
         </tbody>
       </table>
     </>
