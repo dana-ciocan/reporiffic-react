@@ -8,11 +8,22 @@ export interface PullDetailsProps {
 
 export const PullDetails = ({ pull }: PullDetailsProps): JSX.Element | null => {
   return (
-    <div>
-      <a href={pull.url} target='_blank'>
-        {pull.title}
-      </a>{' '}
-      by {pull.author} <img className={styles.avatar} src={pull.authorAvatar} />
+    <div className={styles.pullDetails}>
+      {pull.labels.map((label) => (
+        <span
+          style={{ backgroundColor: `#${label.color}` }}
+          className={styles.label}
+        >
+          {label.name}
+        </span>
+      ))}
+      <div>
+        <a href={pull.url} target='_blank'>
+          {pull.title}
+        </a>{' '}
+        by {pull.author}
+      </div>
+      <img className={styles.avatar} src={pull.authorAvatar} />
     </div>
   );
 };

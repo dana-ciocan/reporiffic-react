@@ -2,7 +2,7 @@
     padding: 1.5rem 0;
 }
 
-.pullContainer * {
+.pullContainer > div {
     margin-bottom: 0.25rem;
     font-size: 1.2rem;
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getOctokit } from '../utils/get-octokit';
-import { Pull, FullPull } from '../types/pull';
+import { Pull, FullPull, Label } from '../types/pull';
 
 export const useOctokitRepoPulls = (name: string): Pull[] => {
   const [pulls, setPulls] = useState<Pull[]>([]);
@@ -21,6 +21,10 @@ export const useOctokitRepoPulls = (name: string): Pull[] => {
               author: pull?.user?.login,
               authorAvatar: pull?.user?.avatar_url,
               number: pull?.number,
+              labels: pull?.labels.map((label: Label) => ({
+                name: label?.name,
+                color: label?.color,
+              })),
             }));
           setPulls(pullData);
         })
