@@ -12,11 +12,11 @@ export const App = () => {
   const repos = useOctokitTeamRepos();
 
   const name = (user.name || user.login || 'there').split(' ')?.[0];
+  const teamName = (team.name || 'your team');
 
   return (
     <>
-      <UserWelcome name={name} team={team.name} />
-      <p>These are the repos {team.name} manages:</p>
+      <UserWelcome name={name} team={teamName} />
       <table>
         <thead>
         <tr>
