@@ -8,9 +8,7 @@ export const RepoContainer = (): JSX.Element => {
   return (
     <div className={styles.repoContainer}>
       {repos.map((repo) => (
-        <>
-          <RepoDetails key={repo.name} repo={repo} />
-        </>
+        <RepoDetails key={repo.name} repo={repo} />
       ))}
     </div>
   );
