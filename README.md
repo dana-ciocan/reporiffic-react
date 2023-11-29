@@ -21,6 +21,7 @@ Your `.env` file will need to contain the following:
 VITE_GITHUB_TOKEN=<your personal github token>
 VITE_GITHUB_OWNER=<your Github organisation>
 VITE_GITHUB_TEAM=<your team slug>
+VITE_STARRED_REPOS=<any repos you want to see at the top of the list, comma-separated>
 ```
 
 For Economist Group teams, the Github organisation should be `EconomistDigitalSolutions`. 
@@ -37,3 +38,15 @@ You can find your team slug as follows:
 ## Generating a Github token
 
 This is a bit more involved, but once it's done, you shouldn't need to do it again for a while.
+
+## Starred repos
+
+By setting repos as "starred", they will display at the top of the list. You can add multiple repos by comma-separating their names. The starred repos will appear in the order you specify here.
+
+For example, if you want to display Engagement and Marber Web at the top, you would set the following in your `.env` file
+
+```
+VITE_STARRED_REPOS=engagement,marber-web
+```
+
+In the UI, you will see a star to the left of any repos that you have starred.

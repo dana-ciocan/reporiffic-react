@@ -13,7 +13,17 @@ export const useOctokitTeamRepos = (): Repo[] => {
             team_slug: import.meta.env.VITE_GITHUB_TEAM,
           })
         .then(({ data }) => {
-          const repoData = data.map(repo => ({ name: repo?.name, url: repo?.url }))
+          const starredRepos = import.meta.env.VITE_STARRED_REPOS.split(',');
+          const repoData = data.map(repo => ({ name: repo?.name, url: repo?.url })).sort((a, b) => {
+            if (starredRepos.includes(a.name) && !starredRepos.includes(b.name)) {
+              return -1;
+            }
+            if (!starredRepos.includes(a.name) && starredRepos.includes(b.name)) {
+              return 1;
+            }
+            return 0;
+          });
+
           setRepos(repoData)
         })
         .catch((err) => console.log(err));

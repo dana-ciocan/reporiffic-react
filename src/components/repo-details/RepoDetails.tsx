@@ -10,6 +10,7 @@ export interface RepoDetailsProps {
 
 export const RepoDetails = ({ repo }: RepoDetailsProps): JSX.Element | null => {
   const pulls: Pull[] = useOctokitRepoPulls(repo.name);
+  const starredRepos = import.meta.env.VITE_STARRED_REPOS.split(',');
 
-  return pulls.length > 0 ? <><h3 className={styles.repoName}>{repo.name}</h3><PullContainer pulls={pulls} /></> : null;
+  return pulls.length > 0 ? <><h3 className={styles.repoName}>{starredRepos.includes(repo.name) && '⭐️'} {repo.name}</h3><PullContainer pulls={pulls} /></> : null;
 };
