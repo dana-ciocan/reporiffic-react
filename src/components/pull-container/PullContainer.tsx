@@ -14,7 +14,11 @@ export const PullContainer = ({
   return (
     <div className={styles.pullContainer}>
       {pulls.map((pull) => (
-        <PullDetails repoName={repoName} pull={pull} />
+        <PullDetails
+          key={`${repoName}-${pull.number}`}
+          repoName={repoName}
+          pull={pull}
+        />
       ))}
     </div>
   );
