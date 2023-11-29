@@ -1,11 +1,11 @@
-import styles from './UserWelcome.module.css';
+import styles from './WelcomeBanner.module.css';
 
-export interface UserWelcomeProps {
+export interface WelcomeBannerProps {
   name: string;
   team: string;
 }
 
-export const UserWelcome = ({ name }: UserWelcomeProps): JSX.Element => {
+export const WelcomeBanner = ({ name }: WelcomeBannerProps): JSX.Element => {
   return (
     <div className={styles.banner}>
       <h1>Hi {name} 👋</h1>

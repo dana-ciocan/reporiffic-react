@@ -1,6 +1,6 @@
 import './App.css'
 import { Repo } from './components/repo/Repo';
-import { UserWelcome } from './components/user-welcome/UserWelcome';
+import { WelcomeBanner } from './components/welcome-banner/WelcomeBanner';
 import { useOctokitTeamData } from './hooks/useOctokitTeamData';
 import { useOctokitTeamRepos } from './hooks/useOctokitTeamRepos';
 import { useOctokitUserData } from './hooks/useOctokitUserData';
@@ -16,7 +16,7 @@ export const App = () => {
 
   return (
     <>
-      <UserWelcome name={name} team={teamName} />
+      <WelcomeBanner name={name} team={teamName} />
       <table>
         <thead>
         <tr>
