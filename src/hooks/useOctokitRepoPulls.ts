@@ -9,12 +9,20 @@ export const useOctokitRepoPulls = (name: string): Pull[] => {
     const onLoad = async () => {
       await getOctokit()
         .request('GET /repos/{org}/{repo}/pulls', {
-            org: import.meta.env.VITE_GITHUB_OWNER,
-            repo: name,
-          })
+          org: import.meta.env.VITE_GITHUB_OWNER,
+          repo: name,
+        })
         .then(({ data }) => {
-          const pullData = data.filter((pull: FullPull) => !pull.draft).map((pull: FullPull) => ({ url: pull?.html_url, title: pull?.title, author: pull?.user?.login, authorAvatar: pull?.user?.avatar_url }))
-          setPulls(pullData)
+          const pullData = data
+            .filter((pull: FullPull) => !pull.draft)
+            .map((pull: FullPull) => ({
+              url: pull?.html_url,
+              title: pull?.title,
+              author: pull?.user?.login,
+              authorAvatar: pull?.user?.avatar_url,
+              number: pull?.number,
+            }));
+          setPulls(pullData);
         })
         .catch((err) => console.log(err));
     };
