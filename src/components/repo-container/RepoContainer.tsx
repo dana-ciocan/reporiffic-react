@@ -1,11 +1,11 @@
 import { useOctokitTeamRepos } from '../../hooks/useOctokitTeamRepos';
-import { PullContainer } from '../pull-container/PullContainer';
+import { RepoDetails } from '../repo-details/RepoDetails';
 import styles from './RepoContainer.module.css';
 
 export const RepoContainer = (): JSX.Element => {
   const repos = useOctokitTeamRepos();
 
   return <div className={styles.repoContainer}>
-    {repos.map(repo => <><h3 className={styles.repoName}>{repo.name}</h3><PullContainer repoName={repo.name} /></>)}
+    {repos.map(repo => <><RepoDetails repo={repo} /></>)}
   </div>;
 };
