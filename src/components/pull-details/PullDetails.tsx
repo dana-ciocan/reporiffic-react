@@ -1,6 +1,7 @@
 import { useOctokitPullReviews } from '../../hooks/useOctokitPullReviews';
 import { Pull } from '../../types/pull';
 import { Review, State } from '../../types/review';
+import { ReviewIcon } from '../review-icon/ReviewIcon';
 import styles from './PullDetails.module.css';
 
 export interface PullDetailsProps {
@@ -40,17 +41,9 @@ export const PullDetails = ({
         by {pull.author}
       </div>
       <img className={styles.avatar} src={pull.authorAvatar} />
-      {reviews.map((review) => {
-        if (review.state === State.Approved) {
-          return '✅ ';
-        }
-        if (review.state === State.Commented) {
-          return '💬 ';
-        }
-        if (review.state === State.ChangesRequested) {
-          return '🛑 ';
-        }
-      })}
+      {reviews.map((review) => (
+        <ReviewIcon author={review.author} state={review.state} />
+      ))}
     </div>
   );
 };
