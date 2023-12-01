@@ -23,6 +23,17 @@ body {
   min-height: 100vh;
 }
 
+a:link {
+  color: mediumorchid;
+}
+a:visited {
+  color: teal;
+}
+a:hover {
+  color: turquoise;
+  text-decoration: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
