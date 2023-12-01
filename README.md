@@ -24,7 +24,7 @@ VITE_GITHUB_TEAM=<your team slug>
 VITE_STARRED_REPOS=<any repos you want to see at the top of the list, comma-separated>
 ```
 
-For Economist Group teams, the Github organisation should be `EconomistDigitalSolutions`. 
+For Economist Group teams, the Github organisation should be `EconomistDigitalSolutions`.
 
 ## Getting your team slug
 
@@ -38,6 +38,17 @@ You can find your team slug as follows:
 ## Generating a Github token
 
 This is a bit more involved, but once it's done, you shouldn't need to do it again for a while.
+
+To get your token:
+
+1. Go to https://github.com/settings/tokens
+1. Click on the _Generate new token_ dropdown
+1. Click on _Generate new token (classic)_
+1. Authenticate using your favourite authenticator app
+1. Under _Note_, add a note to yourself about what this token is for
+1. Given this will be a read-only token, you can select _No expiration_ in the _Expiration_ drop-down
+1. For _Scopes_, select _read:packages_
+1. Click _Generate token_ - this will show your token; leave this page open
 
 ## Starred repos
 
