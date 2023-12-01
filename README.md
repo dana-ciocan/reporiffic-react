@@ -52,7 +52,7 @@ To get your token:
 
 ## Starred repos
 
-By setting repos as "starred", they will display at the top of the list. You can add multiple repos by comma-separating their names. The starred repos will appear in the order you specify here.
+By setting repos as "starred", they will display at the top of the list. You can add multiple repos by comma-separating their names.
 
 For example, if you want to display Engagement and Marber Web at the top, you would set the following in your `.env` file
 
