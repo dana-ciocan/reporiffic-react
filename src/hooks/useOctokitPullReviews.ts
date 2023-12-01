@@ -21,6 +21,7 @@ export const useOctokitPullReviews = (
             author: review?.user?.login,
             authorAvatar: review?.user?.avatar_url,
             submittedDate: review?.submitted_at,
+            state: review?.state,
           }));
           setReviews(reviewData);
         })

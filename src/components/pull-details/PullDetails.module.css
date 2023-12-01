@@ -1,15 +1,30 @@
 .pullDetails {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pullApproved {
+  .label {
+    background-color: grey !important;
+  }
+
+  > div, a:link, a:visited {
+    color: grey;
+  }
+
+  .avatar {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
 }
 
 .avatar {
-    height: 1.75rem;
-    width: 1.75rem;
-    border-radius: 50%;
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 50%;
 }
 
 .label {
