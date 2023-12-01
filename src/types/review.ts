@@ -9,6 +9,7 @@ export interface Review {
   authorAvatar: string;
   submittedDate: string;
   state: State;
+  body: string;
 }
 
 export interface FullReview {
@@ -18,4 +19,5 @@ export interface FullReview {
   };
   submitted_at: string;
   state: State;
+  body: string;
 }

@@ -17,11 +17,13 @@ export const useOctokitPullReviews = (
           pull_number: pullNumber,
         })
         .then(({ data }) => {
+          console.log(data);
           const reviewData = data.map((review: FullReview) => ({
             author: review?.user?.login,
             authorAvatar: review?.user?.avatar_url,
             submittedDate: review?.submitted_at,
             state: review?.state,
+            body: review?.body,
           }));
           setReviews(reviewData);
         })

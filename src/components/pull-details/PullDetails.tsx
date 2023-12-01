@@ -18,14 +18,9 @@ export const PullDetails = ({
     reviews.filter((review: Review) => review.state === State.Approved)
       .length >= import.meta.env.VITE_REQUIRED_REVIEWS;
 
-  let pullStyles = '';
-  if (pullApproved) {
-    pullStyles += ` ${styles.pullApproved}`;
-  }
-
   return (
-    <details key={`${repoName}:${pull.number}`}>
-      <summary className={pullStyles}>
+    <details key={`${repoName}:${pull.number}`} className={styles.pullDetails}>
+      <summary className={pullApproved ? styles.pullApproved : ''}>
         {pull.labels.map((label) => (
           <span
             style={{ backgroundColor: `#${label.color}` }}
@@ -46,11 +41,14 @@ export const PullDetails = ({
         ))}
       </summary>
       <div className={styles.expansion}>
+        {reviews.length === 0 && 'No reviews yet'}
         {reviews.map((review) => {
           return (
             <div className={styles.reviewStep}>
               <ReviewIcon author={review.author} state={review.state} />{' '}
+              {review.body && <span>&quot;{review.body}&quot;</span>} from{' '}
               {review.author}
+              <img className={styles.avatar} src={review.authorAvatar} />
             </div>
           );
         })}
