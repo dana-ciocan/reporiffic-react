@@ -18,32 +18,43 @@ export const PullDetails = ({
     reviews.filter((review: Review) => review.state === State.Approved)
       .length >= import.meta.env.VITE_REQUIRED_REVIEWS;
 
-  let pullStyles = `${styles.pullDetails}`;
+  let pullStyles = '';
   if (pullApproved) {
     pullStyles += ` ${styles.pullApproved}`;
   }
 
   return (
-    <div className={pullStyles} key={`${repoName}:${pull.number}`}>
-      {pullApproved}
-      {pull.labels.map((label) => (
-        <span
-          style={{ backgroundColor: `#${label.color}` }}
-          className={styles.label}
-        >
-          {label.name}
+    <details key={`${repoName}:${pull.number}`}>
+      <summary className={pullStyles}>
+        {pull.labels.map((label) => (
+          <span
+            style={{ backgroundColor: `#${label.color}` }}
+            className={styles.label}
+          >
+            {label.name}
+          </span>
+        ))}
+        <span>
+          <a href={pull.url} target='_blank'>
+            {pull.title}
+          </a>{' '}
+          by {pull.author}
         </span>
-      ))}
-      <div>
-        <a href={pull.url} target='_blank'>
-          {pull.title}
-        </a>{' '}
-        by {pull.author}
+        <img className={styles.avatar} src={pull.authorAvatar} />
+        {reviews.map((review) => (
+          <ReviewIcon author={review.author} state={review.state} />
+        ))}
+      </summary>
+      <div className={styles.expansion}>
+        {reviews.map((review) => {
+          return (
+            <div className={styles.reviewStep}>
+              <ReviewIcon author={review.author} state={review.state} />{' '}
+              {review.author}
+            </div>
+          );
+        })}
       </div>
-      <img className={styles.avatar} src={pull.authorAvatar} />
-      {reviews.map((review) => (
-        <ReviewIcon author={review.author} state={review.state} />
-      ))}
-    </div>
+    </details>
   );
 };

@@ -1,3 +1,4 @@
+
 .pullDetails {
   display: flex;
   flex-direction: row;
@@ -25,6 +26,7 @@
   height: 1.75rem;
   width: 1.75rem;
   border-radius: 50%;
+  margin: 0 0.5rem -0.5rem 0.5rem;
 }
 
 .label {
@@ -32,4 +34,13 @@
   padding: 0.2rem 0.5rem;
   border-radius: 1rem;
   font-size: 0.75rem;
+  margin-right: 0.25rem;
+}
+
+.expansion {
+  padding: 1rem;
+}
+
+.reviewStep {
+  margin: 0.5rem 0;
 }

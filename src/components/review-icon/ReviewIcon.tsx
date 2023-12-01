@@ -9,14 +9,14 @@ export interface ReviewIconProps {
 export const ReviewIcon = ({ author, state }: ReviewIconProps): JSX.Element => {
   if (state === State.Approved) {
     return (
-      <span className={styles.approved} title={`One approval by ${author}`}>
+      <span className={styles.reviewIcon} title={`One approval by ${author}`}>
         ✅
       </span>
     );
   }
   if (state === State.Commented) {
     return (
-      <span className={styles.commented} title={`One comment by ${author}`}>
+      <span className={styles.reviewIcon} title={`One comment by ${author}`}>
         💬
       </span>
     );
@@ -24,7 +24,7 @@ export const ReviewIcon = ({ author, state }: ReviewIconProps): JSX.Element => {
   if (state === State.ChangesRequested) {
     return (
       <span
-        className={styles.changesRequested}
+        className={styles.reviewIcon}
         title={`Changes requested by ${author}`}
       >
         🛑
