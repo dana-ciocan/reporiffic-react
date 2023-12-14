@@ -15,7 +15,7 @@ export const useOctokitTeamRepos = (): Repo[] => {
         .then(({ data }) => {
           const starredRepos = import.meta.env.VITE_STARRED_REPOS.split(',');
           const repoData = data
-            .map((repo) => ({ name: repo?.name, url: repo?.url }))
+            .map((repo) => ({ name: repo?.name, url: repo?.html_url }))
             .sort((a, b) => {
               if (
                 starredRepos.includes(a.name) &&
