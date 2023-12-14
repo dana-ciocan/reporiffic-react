@@ -18,6 +18,11 @@ export const RepoDetails = ({ repo }: RepoDetailsProps): JSX.Element | null => {
         {starredRepos.includes(repo.name) && '⭐️'} {repo.name}
       </h3>
       <PullContainer repoName={repo.name} pulls={pulls} />
+      <p className={styles.repoLink}>
+        <a href={`${repo.url}/pulls`} target='_blank'>
+          All {repo.name} PRs
+        </a>
+      </p>
     </>
   ) : null;
 };
