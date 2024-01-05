@@ -47,8 +47,10 @@ To get your token:
 1. Authenticate using your favourite authenticator app
 1. Under _Note_, add a note to yourself about what this token is for
 1. Given this will be a read-only token, you can select _No expiration_ in the _Expiration_ drop-down
-1. For _Scopes_, select _read:packages_
-1. Click _Generate token_ - this will show your token; leave this page open
+1. For _Scopes_, select _repo_ - this will automatically select everything in this section
+1. Click _Generate token_ at the bottom of the page - this will show your token
+1. Copy and paste your token into your `.env` file
+1. Click on the _Configure SSO_ dropdown and click _Authorize_ next to next to the organisation you want to authorise
 
 ## Starred repos
 
