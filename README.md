@@ -24,8 +24,6 @@ VITE_GITHUB_TEAM=<your team slug>
 VITE_STARRED_REPOS=<any repos you want to see at the top of the list, comma-separated>
 ```
 
-For Economist Group teams, the Github organisation should be `EconomistDigitalSolutions`.
-
 ## Getting your team slug
 
 You can find your team slug as follows:
